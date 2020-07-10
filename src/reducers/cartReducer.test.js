@@ -1,4 +1,4 @@
-import * as actions from "../actions/actionTypes";
+import { addItem } from "../actions/cartActions";
 import cartReducer from "./cartReducer";
 
 describe("cartReducer", () => {
@@ -14,14 +14,13 @@ describe("cartReducer", () => {
     expect(cartReducer(undefined, {})).toEqual(expectedState);
   });
 
-  it('should handle the ADD_ITEM action', () => {
-
+  it("should handle the ADD_ITEM action", () => {
     const testItem = {
       id: 1,
       name: "Pink Lady Apples",
       description: "Crispy and delicious, with a sweet flavour.",
-      price: 36
-    }
+      price: 35,
+    };
 
     const expectedState = {
       products: [testItem],
@@ -30,5 +29,18 @@ describe("cartReducer", () => {
       total: 0,
       subtotal: 0,
     };
+
+    expect(
+      cartReducer(
+        {
+          products: [testItem],
+          promotionalOffers: [],
+          basket: [],
+          total: 0,
+          subtotal: 0,
+        },
+        addItem(1)
+      )
+    ).toEqual(expectedState);
   });
 });
