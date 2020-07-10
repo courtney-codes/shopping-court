@@ -11,11 +11,12 @@ const initialState = {
 const shoppingCart = (state = initialState, action) => {
   switch (action.type) {
     case ADD_ITEM:
+      const addedItem = () => state.products.find(item => item.id === action.itemId)
       return {
         ...state,
         basket: [
           ...state.basket,
-          () => state.products.find(item => item.id === action.itemId)
+          addedItem()
         ]
       };
     case REMOVE_ITEM:
