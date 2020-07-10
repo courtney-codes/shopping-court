@@ -3,7 +3,7 @@ import * as actionTypes from './actionTypes';
 import faker from 'faker';
 
 describe('addItem action', () => {
-  it('should create an action that adds an item to the cart', () => {
+  it('should create an action to add an item to the cart', () => {
     const testItemId = faker.random.number();
     const expectedAction = {
       type: actionTypes.ADD_ITEM,
