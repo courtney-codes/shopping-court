@@ -1,8 +1,5 @@
 import { ADD_ITEM, REMOVE_ITEM } from '../actions/actionTypes';
-import * as R from 'ramda';
-
-const addToBasket = (itemId, products, basket) => R.append(R.find(R.propEq("id", itemId), products), R.__)(basket);
-const removeFromBasket = (itemId, basket) => R.remove(R.findIndex(R.propEq("id", itemId), R.__), 1, R.__)(basket);
+import { addToBasket, removeFromBasket } from '../functions';
  
 const initialState = {
   products: [],
