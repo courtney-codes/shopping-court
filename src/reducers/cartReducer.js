@@ -1,5 +1,5 @@
 import { ADD_ITEM, REMOVE_ITEM } from '../actions/actionTypes';
-import { addToBasket, removeFromBasket } from '../functions';
+import { addToBasket, removeFromBasket } from '../lib/functions';
  
 const initialState = {
   products: [],
@@ -19,7 +19,7 @@ const shoppingCart = (state = initialState, action) => {
     case REMOVE_ITEM:
       return {
         ...state,
-        basket: removeFromBasket(action.itemId, state.basket)
+        basket: removeFromBasket(action.itemId, state.basket),
       }
     default:
       return state;
