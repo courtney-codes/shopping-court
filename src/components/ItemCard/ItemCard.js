@@ -1,11 +1,11 @@
 import React from "react";
 
-const ItemCard = (props) => (
+const ItemCard = ({ item }) => (
   <div className="card p-2">
-    <img src={props.item.image} alt={props.item.name} />
+    <img src={item.image} alt={item.name} />
     <div className="card-body">
-      <h5 className="card-title">{props.item.name}</h5>
-      <p className="card-text">{props.item.description}</p>
+      <h5 className="card-title">{item.name}</h5>
+      <p className="card-text">{item.description}</p>
     </div>
     <div className="form-group">
       <label htmlFor="quantity">Quantity</label>
