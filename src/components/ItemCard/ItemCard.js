@@ -1,8 +1,8 @@
 import React from "react";
 
 const ItemCard = ({ item }) => (
-  <div className="card p-2">
-    <img src={item.image} alt={item.name} />
+  <div className="card p-2 d-flex align-items-center">
+    <img className="img-small" src={item.image} alt={item.name} />
     <div className="card-body">
       <h5 className="card-title">{item.name}</h5>
       <p className="card-text">{item.description}</p>
@@ -15,7 +15,7 @@ const ItemCard = ({ item }) => (
             -
           </button>
         </div>
-        <input type="number" name="quantity" className="form-control text-center" />
+        <input type="number" name="quantity" className="form-control text-center" defaultValue={0} />
         <div className="input-group-append">
           <button className="btn btn-outline-primary" type="button">
             +
@@ -23,7 +23,7 @@ const ItemCard = ({ item }) => (
         </div>
       </div>
     </div>
-    <button className="btn btn-large btn-primary">Add to basket</button>
+    <button className="btn btn-inline btn-large btn-primary mb-3">Add to basket</button>
   </div>
 );
 
