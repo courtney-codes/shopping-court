@@ -1,7 +1,7 @@
 import React from "react";
 
 const ItemCard = ({ item }) => (
-  <div className="card p-2 d-flex align-items-center">
+  <div className="card p-2 mb-3 d-flex align-items-center">
     <img className="img-small" src={item.image} alt={item.name} />
     <div className="card-body">
       <h5 className="card-title">{item.name}</h5>

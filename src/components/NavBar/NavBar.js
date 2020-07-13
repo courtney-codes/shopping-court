@@ -4,7 +4,7 @@ import { RiShoppingBasket2Line } from "react-icons/ri";
 
 const NavBar = ({ basketCount }) => (
   <IconContext.Provider value={{ size: "2em" }}>
-    <nav className="navbar navbar-expand-md navbar-light bg-light justify-content-between" data-testid="navbar">
+    <nav className="navbar navbar-expand-md navbar-light bg-light px-3 justify-content-between" data-testid="navbar">
       <a href="#" className="navbar-brand">
         ShoppingCourt
       </a>
