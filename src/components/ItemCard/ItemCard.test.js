@@ -6,7 +6,7 @@ beforeEach(() => {
   
 });
 
-test('should render the title of the item', () => {
+test('should render the name of the item', () => {
 
   const testItem = {
     id: 1,
@@ -16,6 +16,20 @@ test('should render the title of the item', () => {
   };
 
   const { getByText } = render(<ItemCard item={testItem}/>);
-  const itemTitle = getByText(testItem.description);
+  const itemTitle = getByText(testItem.name);
   expect(itemTitle).toBeInTheDocument();
+});
+
+test('should render the item description', () => {
+
+  const testItem = {
+    id: 1,
+    name: "Pink Lady Apples",
+    description: "Crispy and delicious, with a sweet flavour.",
+    price: 35,
+  };
+
+  const { getByText } = render(<ItemCard item={testItem}/>);
+  const itemDescription = getByText(testItem.description);
+  expect(itemDescription).toBeInTheDocument();
 });
