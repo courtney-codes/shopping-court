@@ -16,6 +16,6 @@ test('should render the title of the item', () => {
   };
 
   const { getByText } = render(<ItemCard item={testItem}/>);
-  const itemTitle = getByText("Pink Lady Apples");
+  const itemTitle = getByText(testItem.description);
   expect(itemTitle).toBeInTheDocument();
 });
