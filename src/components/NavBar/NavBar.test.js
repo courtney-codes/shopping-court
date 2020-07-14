@@ -15,8 +15,6 @@ describe('NavBar component', () => {
     const testItemsInBasketCount = faker.random.number(30);
     const { getByTestId } = render(<NavBar basketCount={testItemsInBasketCount}/>);
     const basketNavItem = getByTestId("basket-nav-item");
-    
-    console.log(testItemsInBasketCount);
 
     expect(basketNavItem).toHaveTextContent(`${testItemsInBasketCount} items in basket`);
 

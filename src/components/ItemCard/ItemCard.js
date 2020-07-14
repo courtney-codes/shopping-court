@@ -7,7 +7,8 @@ const ItemCard = ({ item }) => (
       <h5 className="card-title">{item.name}</h5>
       <p className="card-text">{item.description}</p>
     </div>
-    <div className="form-group">
+    <h6 className="text-success">{item.price}</h6>
+    <div className="form-group w-50">
       <label htmlFor="quantity">Quantity</label>
       <div className="input-group">
         <div className="input-group-prepend">
@@ -15,7 +16,7 @@ const ItemCard = ({ item }) => (
             -
           </button>
         </div>
-        <input type="number" name="quantity" className="form-control text-center" defaultValue={0} />
+        <input type="number" name="quantity" className="form-control text-center no-spinner" defaultValue={0} />
         <div className="input-group-append">
           <button className="btn btn-outline-primary" type="button">
             +

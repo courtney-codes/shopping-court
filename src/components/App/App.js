@@ -1,9 +1,10 @@
-import React from "react";
 import "./App.css";
+import AppleImg from "../../assets/Apples.jpg";
+import Basket from '../Basket/Basket';
 import ItemCard from "../ItemCard/ItemCard";
 import ItemList from "../ItemList/ItemList";
-import AppleImg from "../../assets/Apples.jpg";
 import NavBar from "../NavBar/NavBar";
+import React from "react";
 
 const item = {
   id: 1,
@@ -18,7 +19,7 @@ function App() {
     <div className="App">
       <NavBar basketCount={3} />
       <div className="row">
-    <div className="col-md-8 col-sm-12">
+        <div className="col-md-8 col-sm-12 overflow-auto h-100">
           <ItemList>
             <ItemCard item={item} />
             <ItemCard item={item} />
@@ -28,7 +29,10 @@ function App() {
             <ItemCard item={item} />
             <ItemCard item={item} />
           </ItemList>
-    </div>
+        </div>
+        <div className="col-md-4 col-sm-12">
+          <Basket />
+        </div>
       </div>
     </div>
   );
