@@ -1,9 +1,17 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import ItemCard from '../ItemCard/ItemCard';
 
-const ItemList = ({ children }) => (
-  <div className="row p-3 mx-3">
-    {children.map(child => <div className="col-md-12 col-lg-4">{child}</div>)}
-  </div>
-);
+const ItemList = () => {
+  const availableProducts = useSelector(state => state.products);
+  
+  return (
+    <div className="row p-3 mx-3">
+      {availableProducts.map((item) => (
+        <div className="col-md-12 col-lg-4"><ItemCard item={item}/></div>
+      ))}
+    </div>
+  );
+};
 
 export default ItemList;

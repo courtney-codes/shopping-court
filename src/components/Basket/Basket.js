@@ -4,7 +4,7 @@ import BasketItem from "../BasketItem/BasketItem";
 import { formatAmount } from '../../lib/formatters';
 
 const Basket = () => {
-  const { basket: itemsInBasket, subtotal } = useSelector((state) => state);
+  const { basket: itemsInBasket, subtotal, savings } = useSelector((state) => state);
 
   return (
     <div className="h-100 d-flex flex-column align-items-center p-3 bg-light border-bottom border-left">
@@ -21,7 +21,7 @@ const Basket = () => {
         </div>
         <div className="d-flex justify-content-between">
           <h6>Savings</h6>
-          <h6>£2.80</h6>
+          <h6>{formatAmount(savings)}</h6>
         </div>
         <hr />
         <div className="d-flex justify-content-between">
